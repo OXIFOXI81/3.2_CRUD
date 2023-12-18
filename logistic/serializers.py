@@ -7,7 +7,7 @@ class ProductSerializer(serializers.ModelSerializer):
     # настройте сериализатор для продукта
     class Meta:
       model=Product
-      fields='__all__'
+      fields= ['id', 'title', 'description']
 
 
 
@@ -15,7 +15,7 @@ class ProductPositionSerializer(serializers.ModelSerializer):
     # настройте сериализатор для позиции продукта на складе
     class Meta:
         model = StockProduct
-        fields ='__all__'
+        fields = ['product', 'quantity', 'price']
 
 
 
@@ -24,7 +24,7 @@ class StockSerializer(serializers.ModelSerializer):
     class Meta:
          model=Stock
 
-         fields=['id','address','positions']
+         fields=['address','positions']
 
 
     def create(self, validated_data):
