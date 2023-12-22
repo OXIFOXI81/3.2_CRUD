@@ -16,6 +16,7 @@ class ProductPositionSerializer(serializers.ModelSerializer):
     class Meta:
         model = StockProduct
         fields = ['product', 'quantity', 'price']
+        # depth=1
 
 
 
